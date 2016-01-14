@@ -17,3 +17,13 @@ whatGrade x
   |x < 80 && x>=72 = "C"
   |x < 72 && x>=70 = "D"
   |otherwise = "F" 
+
+battingAbility :: Double -> Double -> String
+battingAbility hits atBats
+  | avg <= 0.200 = "you suck"
+  | avg > 0.200 && avg <=0.250 = "you are average"
+  | avg > 0.250 && avg <=0.280 = "you are good"
+  | otherwise = "you are a superstar"
+  where avg = hits/atBats
+
+
