@@ -1,3 +1,4 @@
+import System.IO
 hello = "Hello, World!"
 
 
@@ -57,3 +58,24 @@ area (Circle _ _ r) = pi * r ^ 2
 area (Rectangle x y) = (abs $2 * x - x) * (abs $ 2 * y - y)
 
 myCircle = Circle 1 1 1
+
+
+sumValue = putStrLn (show (1 + 2))
+sumValue2 = putStrLn . show $ 1 + 2
+
+
+
+
+
+writeToFile = do
+  theFile <- openFile "test.txt" WriteMode
+  hPutStrLn theFile ("Random line of text")
+  hClose theFile
+
+readFromFile = do
+  theFile2 <- openFile "test.txt" ReadMode
+  contents <- hGetContents theFile2
+  putStr contents
+  hClose theFile2
+
+fib = 1: 1 : [a + b | (a, b) <- zip fib (tail fib)]
