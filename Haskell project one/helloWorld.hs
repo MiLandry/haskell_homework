@@ -27,3 +27,33 @@ battingAbility hits atBats
   where avg = hits/atBats
 
 
+data BaseballPlayer = Pitcher
+  | Catcher
+  | Infielder
+  | Outfielder
+  deriving Show
+
+
+barryBonds :: BaseballPlayer -> Bool
+barryBonds Outfielder = True
+
+barryInOF = print(barryBonds Outfielder)
+
+data Customer = Customer String String Double
+  deriving Show
+
+tomSmith :: Customer
+tomSmith = Customer "Tom Smith" "123 Fake Street" 20.15
+
+getBalance :: Customer -> Double
+getBalance (Customer _ _ b) = b
+
+data Shape = Circle Float Float Float | Rectangle Float Float
+  deriving Show
+
+area :: Shape -> Float
+
+area (Circle _ _ r) = pi * r ^ 2
+area (Rectangle x y) = (abs $2 * x - x) * (abs $ 2 * y - y)
+
+myCircle = Circle 1 1 1
