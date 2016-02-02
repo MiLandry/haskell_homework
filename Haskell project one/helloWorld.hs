@@ -1,81 +1,9 @@
 import System.IO
 hello = "Hello, World!"
 
-
--- Compute the sum of the integers from 1 to n.
-sumtorial :: Integer -> Integer
-sumtorial 0 = 0
-sumtorial n = n + sumtorial (n-1)
-
-
-isOdd :: Int -> Bool
-isOdd x = x `mod` 2 == 1
-
-whatGrade :: Int -> String
-whatGrade x
-  |x >= 90 = "A"
-  |x < 90 && x>=80 = "B"
-  |x < 80 && x>=72 = "C"
-  |x < 72 && x>=70 = "D"
-  |otherwise = "F" 
-
-battingAbility :: Double -> Double -> String
-battingAbility hits atBats
-  | avg <= 0.200 = "you suck"
-  | avg > 0.200 && avg <=0.250 = "you are average"
-  | avg > 0.250 && avg <=0.280 = "you are good"
-  | otherwise = "you are a superstar"
-  where avg = hits/atBats
-
-
-data BaseballPlayer = Pitcher
-  | Catcher
-  | Infielder
-  | Outfielder
-  deriving Show
-
-
-barryBonds :: BaseballPlayer -> Bool
-barryBonds Outfielder = True
-
-barryInOF = print(barryBonds Outfielder)
-
-data Customer = Customer String String Double
-  deriving Show
-
-tomSmith :: Customer
-tomSmith = Customer "Tom Smith" "123 Fake Street" 20.15
-
-getBalance :: Customer -> Double
-getBalance (Customer _ _ b) = b
-
-data Shape = Circle Float Float Float | Rectangle Float Float
-  deriving Show
-
-area :: Shape -> Float
-
-area (Circle _ _ r) = pi * r ^ 2
-area (Rectangle x y) = (abs $2 * x - x) * (abs $ 2 * y - y)
-
-myCircle = Circle 1 1 1
-
-
-sumValue = putStrLn (show (1 + 2))
-sumValue2 = putStrLn . show $ 1 + 2
-
-
-
-
-
-writeToFile = do
-  theFile <- openFile "test.txt" WriteMode
-  hPutStrLn theFile ("Random line of text")
-  hClose theFile
-
-readFromFile = do
-  theFile2 <- openFile "test.txt" ReadMode
-  contents <- hGetContents theFile2
-  putStr contents
-  hClose theFile2
-
-fib = 1: 1 : [a + b | (a, b) <- zip fib (tail fib)]
+getListItems :: [Int] -> String
+--you should check to see if the list is empty and do something
+getListItems [] = "Yourlist is empty"
+getListItems (x:[]) = "Your list only has one element ; it contains:  " ++ show x
+getListItems (x:y:[]) = "Your list contains two elements " ++ show x ++ "and " ++ show y
+getListItems (x:xs) = "first item is " ++ show x ++ "and the rest of the list is " ++ show xs
