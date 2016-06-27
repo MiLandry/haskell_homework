@@ -1,6 +1,8 @@
 {-# OPTIONS_GHC -Wall #-}
 module HW01 where
 
+--Homework: implementing lua algorithim (for validating credit cards)
+
 -- Exercise 1 -----------------------------------------
 
 -- Get the last digit from a number

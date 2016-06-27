@@ -1,28 +1,10 @@
-CIS 194: Homework 1
-Due Wednesday, January 28
-When solving the homework, strive to create not just code that
-works, but code that is stylish and concise. See the style guide on
-the website for some general guidelines. Try to write small functions
-which perform just a single task, and then combine those smaller
-pieces to create more complex functions. Don’t repeat yourself: write
-one function for each logical task, and reuse functions as necessary.
-Be sure to write functions with exactly the specified name and
-type signature for each exercise (to help us test your code). You may
-create additional helper functions with whatever names and type
-signatures you wish.
-You are allowed to use functions in the Data.List standard library.
-You can find a list of these functions at http://hackage.haskell.
-org/package/base-4.7.0.1/docs/Data-List.html.
-Administrivia
-• Sign up on Piazza at http://piazza.com/upenn/spring2015/
-cis194. We will be using Piazza for Q&A and online discussions.
-Setup
-To aid you in this first assignment, we have provided a skeleton
-HW01.hs, HW01Tests.hs, and Testing.hs. Download the files (available
-from the Lectures page on the course website) and make sure
-you can load it into GHCi. If you can’t get this working, seek help!
-(Piazza is a good place to start.)
-Validating Credit Card Numbers1
+Testing.hs should compile and run and be successful
+
+I answered the problem in HW01.hs
+
+
+
+Validating Credit Card Numbers
 Have you ever wondered how websites validate your credit card
 number when you shop online? They don’t check a massive database
 of numbers, and they don’t use magic. In fact, most credit providers
@@ -31,9 +13,9 @@ valid numbers from random collections of digits (or typing
 mistakes).
 In this section, you will implement the Luhn Algorithm. Pseudocode
 for the algorithm is provided below:
-1Adapted from the first practicum assigned in the University of Utrecht functional
-programming course taught by Doaitse Swierstra, 2008-2009.
-cis 194: homework 1 2
+
+
+
 Haskell B curry 5/15
 VALID THRU
 LAMBDA CARD
@@ -47,13 +29,16 @@ CIS 194 course site. Note, this is for
 educational purposes only. Please do not
 violate his trust and steal his credit card
 information!
+
 • Double the value of every second digit beginning from the right.
 That is, the last digit is unchanged; the second-to-last digit is doubled;
 the third-to-last digit is unchanged; and so on. For example,
 [5,5,9,4] becomes [10,5,18,4].
+
 • Add the digits of the doubled values and the undoubled digits
 from the original number. For example, [10,5,18,4] becomes
 (1 + 0) + 5 + (1 + 8) + 4 = 19.
+
 • Calculate the remainder when the sum is divided by 10. For the
 above example, the remainder would be 9.
 If the result equals 0, then the number is valid.
